@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: rgb(185, 230, 241);
+  background: radial-gradient(
+    circle,
+    rgb(217, 211, 229) 0%,
+    rgb(201, 237, 244) 100%
+  ); */
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  font-family: "poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.quiz-container {
+  /* background: #eb2ebf91;
+  background: radial-gradient(
+    circle,
+    rgb(188, 76, 196) 0%,
+    rgb(106, 91, 219) 100%
+  ); */
+  background-image: linear-gradient(to right, #527dc8 0%, #522ba4 100%);
+  /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.quiz-header h2 {
+  font-size: 1.5rem;
+}
+
+.quiz-header p {
+  background: #111;
+  padding: 0.4rem 1rem;
+  color: #8b2f2f;
+  border-radius: 5px;
+}
+
+.quiz-body {
+  padding: 2rem 2rem;
+}
+
+.quiz-body h2 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.quiz-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quiz-body ul li {
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid #060606;
+  padding: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  .quiz-body ul li label {
+  cursor: pointer;
+  padding: 0 0.4rem;
+}
+
+.quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 5px rgba(12, 11, 11, 0.5);
+}
+
+ .quiz-footer button {
+  padding: 0.6rem 1.5rem;
+  outline: 60;
+  background: #da0e0e;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+  /* border-radius:110px ; */
+  color: #8b2424;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out; 
+}
+
+.quiz-body button {
+  padding: 0.6rem 1rem;
+  outline: none;
+  background: #aa4141;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+  color: #2c2c8d;
+  /* opacity: 0.9; */
+  opacity: 10;
+  transition: 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.quiz-footer button:hover {
+  opacity: 1;
+}
+}
+/* #btn:hover{
+  background-position: bottom;
+  color:blue;
+  text-align:center;
+
+} */
+
+
+input[type="submit"]{
+  background-color: rgb(44, 44, 153);
+  color: rgb(146, 150, 19);
+  padding: 7px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width :50%;
+  /* redius: 59px; */
+}
+input[type="submit"]:hover{
+  /* background-color: rgb(14, 11, 117); */
+  background-image: linear-gradient(to ,  #527dc8 0%, #e661cd 100%);
+  border: none;
+  color: rgb(30, 27, 100);
+  padding: 16px 32px;
+  /* text-decoration: none; */
+  margin: 4px 2px;
+  cursor: pointer;
+   
+}
+#btn{
+  /* background-color: #2c2c8d; */
+  /* color: rgb(16, 15, 15);
+  padding:10px 32px; */
+  text-align: center;
+  border-radius: 25px; 
+  /* background-color: #1018ad; */
+  background-image: linear-gradient(to left,  #c852b2 0%, #5229aa 100%);
+  border: 10px;
+  color: rgb(23, 23, 23);
+  padding: 16px 276px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#SS{
+  /* onclick="location.reload(); */
+  text-align: center;
+  border-radius: 25px; 
+  /* background-color: #1018ad; */
+  background-image: linear-gradient(to left,  #c852b2 0%, #5229aa 100%);
+  border: 10px;
+  color: rgb(23, 23, 23);
+  padding: 16px 230px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* input [type=submit]{
+  background-color: #da0e0e;
+  border: none;
+  color: pink;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+
+} */
+
+    </style>
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+          <h1 class="header-txt"  >Technology Quiz</h1>
+        </div>
+        <div class="quiz-body">
+          <h2 id="question">Question Text</h2>
+          <ul>
+            <li>
+              <input type="radio" name="answer" id="a" class="answer" />
+              <label for="a" id="a_text">Questions</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="b" class="answer" />
+              <label for="b" id="b_text">Questions</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="c" class="answer" />
+              <label for="c" id="c_text">Questions</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="d" class="answer" />
+              <label for="d" id="d_text">Questions</label>
+            </li>
+          </ul>
+        </div>
+        <div class="quiz-footer">
+          <div class="quiz-details"></div>
+          <!-- <button>Submit</button> -->
+          <button type="button" id="btn">Submit</button>
+           <!-- <input type = "submit" name="btn" value="Submit" onClick="Submit" align  = "center"> -->
+           <!-- <input type="sumit" value="Submit" ></div> -->
+            <!-- <input type = "submit" value="Submit"> -->
+        </div>
+      </div>
+
+      <script>
+       const quizData = [
+ {
+  question: "Where is the correct place to insert a JavaScript?",
+  a: "The <head> section",
+  b: "The <body> section",
+  c: "Both the <head> and the <body> section are correct",
+  d: "none of the above",
+  correct: "c"
+ },
+
+ {
+  question: "Which language runs in a web browser?",
+  a: "Java",
+  b: "C",
+  c: "Python",
+  d: "JavaScript",
+  correct: "d"
+ },
+ {
+  question: "What does CSS stand for?",
+  a: "Central Style Sheets",
+  b: "Cascading Style Sheets",
+  c: "Cascading Simple Sheets",
+  d: "Cars SUVs Sailboats",
+  correct: "b"
+ },
+ {
+  question: "What does HTML stand for?",
+  a: "Hypertext Markup Language",
+  b: "Hypertext Markdown Language",
+  c: "Hyperloop Machine Language",
+  d: "Helicopters Terminals Motorboats Lamborginis",
+  correct: "a"
+ },
+ {
+    question: "What year was JavaScript launched?",
+  a: "1996",
+  b: "1995",
+  c: "1994",
+  d: "none of the above",
+  correct: "b"
+ }
+];
+
+const quiz = document.querySelector(".quiz-body");
+const answerEl = document.querySelectorAll(".answer");
+const questionEl = document.getElementById("question");
+const footerEl = document.querySelector(".quiz-footer");
+const quizDetailEl = document.querySelector(".quiz-details");
+const liEl = document.querySelector("ul li");
+
+const a_txt = document.getElementById("a_text");
+const b_txt = document.getElementById("b_text");
+const c_txt = document.getElementById("c_text");
+const d_txt = document.getElementById("d_text");
+const btnSubmit = document.getElementById("btn");
+
+let currentQuiz = 0;
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+ deselectAnswers();
+ const currentQuizData = quizData[currentQuiz];
+ questionEl.innerText = currentQuizData.question;
+ a_txt.innerText = currentQuizData.a;
+ b_txt.innerText = currentQuizData.b;
+ c_txt.innerText = currentQuizData.c;
+ d_txt.innerText = currentQuizData.d;
+ quizDetailEl.innerHTML = `<p>${currentQuiz + 1} of ${quizData.length}</p>`;
+}
+function deselectAnswers() {
+ answerEl.forEach((answerEl) => {
+  answerEl.checked = false;
+ });
+}
+
+// get selected
+function getSelected() {
+ let answer;
+ answerEl.forEach((answerEls) => {
+  if (answerEls.checked) {
+   answer = answerEls.id;
+  }
+ });
+ return answer;
+}
+
+btnSubmit.addEventListener("click", function () {
+ const answers = getSelected();
+
+ if (answers) {
+  if (answers === quizData[currentQuiz].correct) {
+   score++;
+  }
+  nextQuestion();
+ }
+});
+
+// next Slide
+function nextQuestion() {
+ currentQuiz++;
+ if (currentQuiz < quizData.length) {
+  loadQuiz();
+ } else {
+  quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} question correctly</h2>
+    <!-- <button type="button" onclick="location.reload()"  >Reload</button> -->
+    <button type="button" id="SS">Reload</button>
+    `;
+  footerEl.style.display = "none";
+ }
+}
+      </script>
+</body>
+</html>
